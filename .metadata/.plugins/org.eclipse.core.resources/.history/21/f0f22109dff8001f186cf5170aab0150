@@ -1,0 +1,16 @@
+package Company;
+
+import Interface.RoleState;
+
+public class Director implements RoleState {
+    @Override
+    public void showTasks() {
+        System.out.println("- Ra quyết định");
+        System.out.println("- Quản lý công ty");
+    }
+
+    @Override
+    public void promote(CompanyMember member) {
+        System.out.println("❌ Giám đốc không thể thăng chức thêm!");
+    }
+}

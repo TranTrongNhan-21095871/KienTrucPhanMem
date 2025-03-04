@@ -1,0 +1,22 @@
+package Company;
+
+import Interface.RoleBehavior;
+
+public class CompanyMember {
+	private String name;
+    private RoleBehavior role;
+
+    public CompanyMember(String name, RoleBehavior role) {
+        this.name = name;
+        this.role = role;
+    }
+
+    public void showRoleTasks() {
+        System.out.println(name + " có nhiệm vụ:");
+        role.showTasks();
+    }
+
+    public void changeRole(RoleBehavior newRole) {
+        this.role = newRole;
+    }
+}

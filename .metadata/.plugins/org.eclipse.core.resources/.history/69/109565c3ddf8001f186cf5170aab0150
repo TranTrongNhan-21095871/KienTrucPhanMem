@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import Company.CompanyMember;
+import Company.TeamLeader;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập tên nhân viên: ");
+        String name = scanner.nextLine();
+
+        // Mặc định là Đội trưởng, sau đó có thể tự động thăng chức
+        CompanyMember member = new CompanyMember(name, new TeamLeader());
+
+        // Hiển thị nhiệm vụ ban đầu
+        member.showRoleTasks();
+
+        // Giả lập hoàn thành nhiệm vụ nhiều lần
+        for (int i = 0; i < 10; i++) {
+            System.out.println("🔄 Hoàn thành nhiệm vụ lần " + (i + 1));
+            member.completeTask();
+        }
+
+        // Hiển thị nhiệm vụ sau khi có thể đã thăng chức
+        member.showRoleTasks();
+    }
+}

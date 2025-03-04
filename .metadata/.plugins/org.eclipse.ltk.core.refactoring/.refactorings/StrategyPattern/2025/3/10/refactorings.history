@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Interface.RoleState&apos; to &apos;RoleBehavior&apos;&#x0D;&#x0A;- Original project: &apos;StrategyPattern&apos;&#x0D;&#x0A;- Original element: &apos;Interface.RoleState&apos;&#x0D;&#x0A;- Renamed element: &apos;Interface.RoleBehavior&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;RoleState&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Interface{RoleState.java[RoleState" matchStrategy="1" name="RoleBehavior" qualified="false" references="true" similarDeclarations="false" stamp="1741080591582" textual="false" version="1.0"/>
+</session>

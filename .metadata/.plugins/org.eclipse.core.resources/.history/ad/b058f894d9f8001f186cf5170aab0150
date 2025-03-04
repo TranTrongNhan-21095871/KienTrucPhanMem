@@ -1,0 +1,13 @@
+package Company;
+
+import Interface.RoleState;
+
+public class TeamLeader implements RoleState{
+
+	@Override
+	public void showTasks() {
+		System.out.println("Công việc chung của nhân viên");
+		
+	}
+
+}

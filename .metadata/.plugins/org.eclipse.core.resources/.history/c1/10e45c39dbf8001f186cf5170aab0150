@@ -1,0 +1,5 @@
+package Interface;
+
+public interface RoleState {
+    void showTasks(); // Chỉ khai báo, không có phần thực thi
+}

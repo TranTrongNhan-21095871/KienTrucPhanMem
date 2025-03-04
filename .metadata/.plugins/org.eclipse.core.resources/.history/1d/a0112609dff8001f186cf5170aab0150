@@ -1,0 +1,52 @@
+import java.util.Scanner;
+import Company.*;
+import Interface.RoleState;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập tên nhân viên: ");
+        String name = scanner.nextLine();
+        
+        System.out.print("Nhập chức vụ (Đội trưởng, Giám đốc, Nhân viên VP, Nhân viên Xưởng, Kế toán trưởng): ");
+        String role = scanner.nextLine().toLowerCase(); // Đưa về chữ thường để dễ so sánh
+        
+        // Xác định RoleState phù hợp từ input
+        RoleState roleState;
+        switch (role) {
+            case "đội trưởng":
+                roleState = new TeamLeader();
+                break;
+            case "giám đốc":
+                roleState = new Director();
+                break;
+            case "nhân viên vp":
+                roleState = new OfficeStaff();
+                break;
+            case "nhân viên xưởng":
+                roleState = new FactoryWorker();
+                break;
+            case "kế toán trưởng":
+                roleState = new ChiefAccountant();
+                break;
+            default:
+                System.out.println("❌ Chức vụ không hợp lệ!");
+                return;
+        }
+
+        // Tạo nhân viên với chức vụ đã nhập
+        CompanyMember member = new CompanyMember(name, roleState);
+        
+        // Hiển thị nhiệm vụ ban đầu
+        member.showRoleTasks();
+        
+        // Giả lập hoàn thành nhiệm vụ nhiều lần
+        for (int i = 0; i < 10; i++) {
+            System.out.println("🔄 Hoàn thành nhiệm vụ lần " + (i + 1));
+            member.completeTask();
+        }
+
+        // Hiển thị nhiệm vụ sau khi có thể đã thăng chức
+        member.showRoleTasks();
+    }
+}

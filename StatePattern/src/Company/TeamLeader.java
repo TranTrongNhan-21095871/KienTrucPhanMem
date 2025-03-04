@@ -1,0 +1,22 @@
+package Company;
+
+import Interface.RoleState;
+
+public class TeamLeader implements RoleState {
+    private int patrolCount = 0;
+
+    @Override
+    public void showTasks() {
+        System.out.println("- Đi tuần");
+        System.out.println("- Gán việc nhân viên");
+    }
+
+    @Override
+    public void promote(CompanyMember member) {
+        patrolCount++;
+        if (patrolCount >= 10) {
+            System.out.println("🔼 Đội trưởng đã hoàn thành 10 lượt tuần tra, được thăng chức lên Giám đốc!");
+            member.changeRole(new Director());
+        }
+    }
+}

@@ -1,0 +1,26 @@
+package Company;
+
+import Interface.RoleState;
+
+public class CompanyMember {
+    private String name;
+    private RoleState role;
+
+    public CompanyMember(String name, RoleState role) {
+        this.name = name;
+        this.role = role;
+    }
+
+    public void showRoleTasks() {
+        System.out.println(name + " có nhiệm vụ:");
+        role.showTasks();
+    }
+
+    public void changeRole(RoleState newRole) {
+        this.role = newRole;
+    }
+
+    public void completeTask() {
+        role.promote(this); // Kích hoạt logic thăng chức nếu có
+    }
+}
